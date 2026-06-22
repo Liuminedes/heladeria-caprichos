@@ -102,17 +102,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const nameEl = card.querySelector('.product-name');
     const descEl = card.querySelector('.product-desc');
     const priceEl = card.querySelector('.product-price');
-    const imgEl = card.querySelector('.img-placeholder');
+    const imgPlaceholderEl = card.querySelector('.img-placeholder');
+    const imgEl = card.querySelector('.product-image-element');
 
     const name = nameEl ? nameEl.childNodes[0].textContent.trim() : 'Producto';
     const desc = descEl ? descEl.textContent : '';
     const price = priceEl ? priceEl.textContent : '';
-    const img = imgEl ? imgEl.textContent : '🍨';
 
     modalTitle.textContent = name;
     modalDesc.textContent = desc;
     modalPrice.textContent = price;
-    modalImage.textContent = img;
+
+    if (imgEl) {
+      modalImage.innerHTML = `<img src="${imgEl.getAttribute('src')}" alt="${name}" class="modal-product-image">`;
+    } else {
+      modalImage.textContent = imgPlaceholderEl ? imgPlaceholderEl.textContent : '🍨';
+    }
 
     // Update WhatsApp link text
     const message = encodeURIComponent(`Hola, quiero pedir un(a) ${name} 🍨`);
