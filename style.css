@@ -624,3 +624,23 @@ h1, h2, h3 {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(217, 116, 79, 0.4);
 }
+
+/* Footer Developer Credits */
+.footer-bottom {
+  text-align: center;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(107, 66, 38, 0.1);
+  font-size: 0.85rem;
+}
+
+.developer-link {
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition-smooth);
+}
+
+.developer-link:hover {
+  color: #9D00FF; /* Neon purple for Vyntra Orbit */
+}
