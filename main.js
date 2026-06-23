@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Update WhatsApp link text
     const message = encodeURIComponent(`Hola, quiero pedir un(a) ${name} 🍨`);
-    modalOrderBtn.href = `https://wa.me/573000000000?text=${message}`;
+    modalOrderBtn.href = `https://wa.me/573225153616?text=${message}`;
 
     modal.classList.remove('hidden');
     document.body.style.overflow = 'hidden'; // Prevent background scrolling
