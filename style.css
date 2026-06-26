@@ -645,74 +645,118 @@ h1, h2, h3 {
   color: #9D00FF; /* Neon purple for Vyntra Orbit */
 }
 
-/* Payment Reminder Overlay */
-.payment-overlay {
+/* Premium Disabled Overlay */
+.disabled-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.95);
+  background: radial-gradient(circle at center, #1a1a2e 0%, #0f0f1a 100%);
   z-index: 999999;
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 1;
-  visibility: visible;
-  transition: opacity 0.5s ease, visibility 0.5s ease;
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
-.payment-overlay.hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-.payment-content {
-  background: white;
-  padding: 2rem;
-  border-radius: 16px;
+.disabled-content {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 3rem 2rem;
+  border-radius: 24px;
   text-align: center;
   max-width: 90%;
-  width: 400px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+  width: 420px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(255,255,255,0.05);
   font-family: 'Inter', sans-serif;
-  color: #333;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
 }
 
-.payment-content h2 {
-  color: #D9744F;
-  margin-top: 0;
-  margin-bottom: 1rem;
-  font-family: 'Inter', sans-serif;
-  font-weight: 700;
-  font-size: 1.5rem;
+.disabled-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #9D00FF, #D9744F);
 }
 
-.payment-content p {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  line-height: 1.5;
-}
-
-.payment-creator {
-  font-size: 1.1rem;
-  margin-bottom: 1rem !important;
+.disabled-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  background: rgba(157, 0, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #9D00FF;
+  box-shadow: 0 0 30px rgba(157, 0, 255, 0.2);
 }
 
-.payment-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+.disabled-content h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: -0.5px;
+  color: #fff;
 }
 
-.payment-timer {
-  font-size: 0.9rem;
-  color: #666;
-  font-style: italic;
+.disabled-content p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #a0a0b0;
+  margin-bottom: 2rem;
+}
+
+.developer-badge {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  border: 1px solid rgba(157, 0, 255, 0.15);
+}
+
+.developer-badge span {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #888;
+  margin-bottom: 0.25rem;
+}
+
+.developer-badge strong {
+  font-size: 1.1rem;
+  color: #9D00FF;
+  text-shadow: 0 0 10px rgba(157, 0, 255, 0.3);
+}
+
+.reactivate-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 14px 24px;
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.reactivate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
 }

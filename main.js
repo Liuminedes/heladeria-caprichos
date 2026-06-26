@@ -148,25 +148,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Payment Reminder Overlay Logic
+  // Premium Disabled Overlay Logic
   const paymentOverlay = document.getElementById('payment-reminder-overlay');
-  const paymentCountdownSpan = document.getElementById('payment-countdown');
   
-  if (paymentOverlay && paymentCountdownSpan) {
-    let secondsLeft = 10;
-    
-    // Disable scrolling while overlay is active
+  if (paymentOverlay) {
+    // Disable scrolling permanently while overlay is active
     document.body.style.overflow = 'hidden';
-
-    const interval = setInterval(() => {
-      secondsLeft--;
-      if (secondsLeft > 0) {
-        paymentCountdownSpan.textContent = secondsLeft;
-      } else {
-        clearInterval(interval);
-        paymentOverlay.classList.add('hidden');
-        document.body.style.overflow = ''; // Restore scrolling
-      }
-    }, 1000);
   }
 });
