@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const paymentCountdownSpan = document.getElementById('payment-countdown');
   
   if (paymentOverlay && paymentCountdownSpan) {
-    let secondsLeft = 5;
+    let secondsLeft = 10;
     
     // Disable scrolling while overlay is active
     document.body.style.overflow = 'hidden';
